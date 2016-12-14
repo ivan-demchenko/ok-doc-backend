@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "api": "./index.js",
+    "generate-config": "./config-generator.js",
+    "help": "./index.js -h",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ivan Demchenko (raqy.style@gmail.com)",

@@ -7,7 +7,6 @@ const api = require('./api');
 program
   .version(require('./package.json').version)
   .usage('[options]')
-  .option('-e, --generate-config', 'Run interactive config generator')
   .option('-c, --config-file <config/user_config.json>', 'Configuration file with documentation root and path to the tree')
   .option('-r, --docs-root <path/to/docs>', 'The root of the docs')
   .option('-t, --tree-file <path/to/tree.json>', 'Path to the generated tree file')
