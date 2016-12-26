@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require("commander");
-var api = require("./api");
+var api = require("../lib/api");
 
 program
 .version(require('./package.json').version)
@@ -15,5 +15,5 @@ program
 if (program.configFile) {
   api.runApi(require(program.configFile));
 } else {
-  require('./config-generator');
+  require('../lib/config-generator');
 }

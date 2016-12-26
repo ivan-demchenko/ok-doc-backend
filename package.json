@@ -1,20 +1,27 @@
 {
-  "name": "docs-view-backend",
-  "version": "0.0.2",
-  "description": "Backend view for the docsView",
-  "main": "index.js",
+  "name": "okey-doc-backend",
+  "version": "0.2.0",
+  "description": "Backend view for the okey-doc-viewer",
+  "main": "./bin/okey-doc-backend",
   "scripts": {
-    "api": "./src/index.js",
-    "generate-config": "./dist/config-generator.js",
-    "help": "./dist/index.js -h",
+    "help": "./bin/okey-doc-backend -h",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "docs-view-backend": "./bin/docs-view-backends"
-  },
-  "homepage": "https://github.com/raqystyle/docsViewBackend",
+  "preferGlobal": true,
+  "homepage": "https://github.com/raqystyle/okey-doc-backend",
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "MIT",
+  "bin": {
+    "okey-doc-backend": "./bin/okey-doc-backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raqystyle/okey-doc-backend.git"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
   "dependencies": {
     "chalk": "^1.1.3",
     "commander": "^2.9.0",
