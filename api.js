@@ -1,10 +1,13 @@
-const server = require('express')();
-const service = require('./service');
+var express = require("express");
+var service = require("./service");
+var server = express();
 
-module.exports = (port, docs, tree) => {
-
-  server.get('/tree', (_, res) => res.json(require(tree)))
-  server.get('/info', (req, res) => res.json(service(req.query.path)));
-
-  server.listen(port, () => console.log('Example app listening on port 3000!'));
-}
+exports.runApi = function (config) {
+  server.get('/tree', function (req, res) {
+    return res.json(require(config.treePath));
+  });
+  server.get('/info', function (req, res) {
+    return res.json(service.getInfo(req.query.path));
+  });
+  server.listen(config.port, function () { return console.log('Example app listening on port:' + config.port); });
+};
