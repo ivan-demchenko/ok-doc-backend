@@ -1,22 +1,22 @@
 {
-  "name": "okey-doc-backend",
+  "name": "ok-doc-backend",
   "version": "0.2.1",
   "description": "Backend view for the okey-doc-viewer",
-  "main": "./bin/okey-doc-backend",
+  "main": "./bin/ok-doc-backend",
   "scripts": {
-    "help": "./bin/okey-doc-backend -h",
+    "help": "./bin/ok-doc-backend -h",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "preferGlobal": true,
-  "homepage": "https://github.com/raqystyle/okey-doc-backend",
+  "homepage": "https://github.com/raqystyle/ok-doc-backend",
   "author": "Ivan Demchenko (raqy.style@gmail.com)",
   "license": "MIT",
   "bin": {
-    "okey-doc-backend": "./bin/okey-doc-backend"
+    "ok-doc-backend": "./bin/ok-doc-backend"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/raqystyle/okey-doc-backend.git"
+    "url": "https://github.com/raqystyle/ok-doc-backend.git"
   },
   "files": [
     "bin",
