@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
-var program = require("commander");
-var api = require("../lib/api");
+const program = require("commander");
+const api = require("../lib/api");
+const path = require('path');
 
 program
-.version(require('./package.json').version)
+.version(require('../package.json').version)
 .usage('[options]')
 .option('-c, --config-file <config/user_config.json>', 'Configuration file with documentation root and path to the tree')
 .option('-r, --docs-root <path/to/docs>', 'The root of the docs')
@@ -13,7 +14,11 @@ program
 .parse(process.argv);
 
 if (program.configFile) {
-  api.runApi(require(program.configFile));
+  if (path.isAbsolute(program.configFile)) {
+    api.runApi(require(program.configFile));
+  } else {
+    api.runApi(require(path.resolve(__dirname, program.configFile)));
+  }
 } else {
   require('../lib/config-generator');
 }
