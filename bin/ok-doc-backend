@@ -17,7 +17,7 @@ if (program.configFile) {
   if (path.isAbsolute(program.configFile)) {
     api.runApi(require(program.configFile));
   } else {
-    api.runApi(require(path.resolve(__dirname, program.configFile)));
+    api.runApi(require(path.resolve(__dirname, '..', program.configFile)));
   }
 } else {
   require('../lib/config-generator');
