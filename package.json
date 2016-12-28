@@ -1,6 +1,6 @@
 {
   "name": "ok-doc-backend",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Backend view for the okey-doc-viewer",
   "main": "./bin/ok-doc-backend",
   "scripts": {
