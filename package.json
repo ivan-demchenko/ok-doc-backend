@@ -30,7 +30,8 @@
     "fluture": "^4.1.0",
     "html-frontmatter": "^1.6.1",
     "inquirer": "^2.0.0",
-    "ramda": "^0.22.1"
+    "ramda": "^0.22.1",
+    "update-notifier": "^1.0.3"
   },
   "devDependencies": {
     "typescript": "^2.1.4",

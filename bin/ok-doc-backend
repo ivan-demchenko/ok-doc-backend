@@ -3,9 +3,13 @@
 const program = require("commander");
 const api = require("../lib/api");
 const path = require('path');
+const updateNotifier = require('update-notifier');
+const pkg = require('../package.json');
+
+updateNotifier({pkg: pkg}).notify({defer: false});
 
 program
-.version(require('../package.json').version)
+.version(pkg.version)
 .usage('[options]')
 .option('-c, --config-file <config/user_config.json>', 'Configuration file with documentation root and path to the tree')
 .option('-r, --docs-root <path/to/docs>', 'The root of the docs')
