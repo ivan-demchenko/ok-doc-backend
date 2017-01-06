@@ -11,18 +11,37 @@ updateNotifier({pkg: pkg}).notify({defer: false});
 program
 .version(pkg.version)
 .usage('[options]')
+.option('-i, --interractive', 'Generate the config using Interractive mode')
 .option('-c, --config-file <config/user_config.json>', 'Configuration file with documentation root and path to the tree')
-.option('-r, --docs-root <path/to/docs>', 'The root of the docs')
 .option('-t, --tree-file <path/to/tree.json>', 'Path to the generated tree file')
 .option('-p, --port <3000>', 'Port to bind the server to')
 .parse(process.argv);
 
-if (program.configFile) {
-  if (path.isAbsolute(program.configFile)) {
-    api.runApi(process.cwd(), require(program.configFile));
+if (program.configFile || (program.port && program.treeFile)) {
+
+  let port;
+  let absoluteTreePath;
+
+  if (program.configFile) {
+    let config = require(
+      path.isAbsolute(program.configFile)
+        ? require(program.configFile)
+        : require(path.join(process.cwd(), program.configFile))
+    );
+    port = Number(config.port);
+    absoluteTreePath = config.treePath;
+  } else if (program.port && program.treeFile) {
+    port = Number(program.port);
+    absoluteTreePath = path.isAbsolute(program.treeFile)
+      ? program.treeFile
+      : path.join(process.cwd(), program.treeFile);
   } else {
-    api.runApi(process.cwd(), require(path.join(process.cwd(), program.configFile)));
+    console.log('Incorrect parameters. Please run: ok-doc-backend -h');
+    return;
   }
+
+  api.runApi(process.cwd(), port, absoluteTreePath);
+
 } else {
   require('../lib/config-generator');
 }
