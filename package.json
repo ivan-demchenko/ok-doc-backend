@@ -5,7 +5,7 @@
   "main": "./bin/ok-doc-backend",
   "scripts": {
     "help": "./bin/ok-doc-backend -h",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "preferGlobal": true,
   "homepage": "https://github.com/raqystyle/ok-doc-backend",
@@ -34,6 +34,8 @@
     "update-notifier": "^1.0.3"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
     "typescript": "^2.1.4",
     "typings": "^2.1.0"
   }
