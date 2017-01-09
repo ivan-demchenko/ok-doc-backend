@@ -43,5 +43,5 @@ if (program.configFile || (program.port && program.treeFile)) {
   api.runApi(process.cwd(), port, absoluteTreePath);
 
 } else {
-  require('../lib/config-generator');
+  require('../lib/config-generator')(void 0);
 }

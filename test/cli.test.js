@@ -2,7 +2,7 @@ const spawn = require('child_process').spawn;
 const joinPath = require('path').join;
 const expect = require('chai').expect;
 
-describe('CLI', () => {
+describe('CLI without params', () => {
   it('should output the first question', (done) => {
     const scriptPath = joinPath(__dirname, '../bin/ok-doc-backend');
     const be = spawn(scriptPath, []);
